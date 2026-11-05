@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.turbo/
+# The Sites build is intentionally buildless; static source is tracked in dist/.
+coverage/
+out/
+next-env.d.ts
+*.tsbuildinfo
+*.log
+.env*
+!.env.example
+.DS_Store

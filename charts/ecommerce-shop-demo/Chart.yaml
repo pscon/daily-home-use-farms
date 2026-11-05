@@ -1,0 +1,10 @@
+apiVersion: v2
+name: daily-home-use-farm
+description: Helm chart for the Daily Home Use Farm Next.js storefront.
+type: application
+# Both are set by .github/workflows/release.yaml from the git tag (vX.Y.Z → version X.Y.Z,
+# appVersion vX.Y.Z) when the chart is packaged. Don't edit them by hand.
+version: 0.0.0
+appVersion: "0.0.0"
+home: https://dailyhomeusefarm.com
+sources: []
