@@ -110,3 +110,14 @@
     padding-block-start: calc(var(--spacing) * 2);
   }
 }
+
+@media (max-width: 47.99rem) {
+  .hero { min-inline-size: 0; gap: 2.5rem; padding: 2.5rem 1.25rem 0; overflow: hidden; }
+  .hero__content { gap: 1.4rem; }
+  .hero__title { max-inline-size: 100%; font-size: clamp(3.4rem, 17vw, 5rem); line-height: .88; overflow-wrap: anywhere; }
+  .hero__lede { max-inline-size: 100%; font-size: 1rem; }
+  .hero__media { gap: .65rem; }
+  .hero__figure { aspect-ratio: 3 / 4; }
+  .hero__actions { width: 100%; }
+  .hero__actions > * { flex: 1 1 100%; }
+}

@@ -75,3 +75,8 @@
     margin-block-start: var(--app-section-space);
   }
 }
+
+@media (max-width: 47.99rem) {
+  .page { min-inline-size: 0; padding: 2rem 1.25rem 0; overflow: hidden; }
+  .page__lede { max-inline-size: 100%; font-size: 1.08rem; }
+}
