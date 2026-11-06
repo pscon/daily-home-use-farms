@@ -111,11 +111,8 @@ export function productJsonLd(product: Product) {
         itemCondition: "https://schema.org/NewCondition",
         hasMerchantReturnPolicy: {
           "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: site.returnDays,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
+          applicableCountry: "NG",
+          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
         },
       },
     })),

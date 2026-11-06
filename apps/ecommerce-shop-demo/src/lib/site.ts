@@ -5,7 +5,6 @@ export const site = {
   locale: "en-NG", currency: "NGN", email: "hello@dailyhomeusefarm.com",
   phone: "08023457318", whatsapp: "2348023457318",
   address: "22 Tarmac Road, Sango Ota, Ogun State", hours: "7am–10pm daily",
-  freeShippingThreshold: 0, returnDays: 0,
   themeColor: { light: "#f3eee4", dark: "#18261c" },
 } as const;
 

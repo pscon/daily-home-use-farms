@@ -24,18 +24,17 @@ import { pageMetadata } from "@/lib/metadata";
 import "./search.scss";
 
 const suggestions = [
-  { label: "Jackets", q: "jacket" },
-  { label: "Hoodies", q: "hoodie" },
-  { label: "Black", q: "black" },
-  { label: "White", q: "white" },
-  { label: "Long sleeve", q: "long tee" },
+  { label: "Small eggs", q: "small eggs" },
+  { label: "Medium eggs", q: "medium eggs" },
+  { label: "Big eggs", q: "big eggs" },
+  { label: "Crate of 30", q: "crate 30" },
 ] as const;
 
 export async function generateMetadata({ searchParams }: PageProps<"/search">): Promise<Metadata> {
   const { q } = parseSearchParams(await searchParams);
   return pageMetadata({
     title: q ? `Search results for “${q}”` : "Search",
-    description: "Search the collection by name, colour or kind of garment.",
+    description: "Search Daily Home Use Farm's available egg sizes and crates.",
     path: "/search",
     // Result pages are thin and endless; keep them out of the index, but follow their links.
     noindex: true,
@@ -63,12 +62,12 @@ async function Search({ searchParams }: PageProps<"/search">) {
           { name: "Home", path: "/" },
           { name: "Search", path: "/search" },
         ]}
-        eyebrow="Find a piece"
+        eyebrow="Find your eggs"
         title={q ? `“${q}”` : "Search"}
         description={
           q
-            ? `${results.length} ${results.length === 1 ? "piece matches" : "pieces match"} your search.`
-            : "Search by name, colour or kind of garment."
+            ? `${results.length} ${results.length === 1 ? "product matches" : "products match"} your search.`
+            : "Search by egg size or crate type."
         }
       >
         <Form action="/search" className="search-form" role="search">
@@ -80,8 +79,8 @@ async function Search({ searchParams }: PageProps<"/search">) {
               type="search"
               name="q"
               defaultValue={q}
-              placeholder="Try “black hoodie” or “jacket”"
-              aria-label="Search the collection"
+              placeholder="Try “medium eggs” or “crate of 30”"
+              aria-label="Search farm products"
               autoComplete="off"
               enterKeyHint="search"
               maxLength={80}
@@ -125,7 +124,7 @@ async function Search({ searchParams }: PageProps<"/search">) {
             <EmptyDescription>
               {q
                 ? "Check the spelling, try a broader word, or start from one of these."
-                : "Or begin with one of the searches our clients make most."}
+                : "Or begin with one of our available egg sizes."}
             </EmptyDescription>
             <EmptyActions className="search-form__suggestions">
               {suggestions.map((suggestion) => (

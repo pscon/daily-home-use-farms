@@ -109,8 +109,7 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
               <h2>Nothing here in this selection</h2>
             </EmptyTitle>
             <EmptyDescription>
-              Every piece in this cut has found a home. Try another filter, or see the whole
-              collection.
+              No egg crates match this selection right now. Try another size or view all available eggs.
             </EmptyDescription>
             <EmptyActions>
               <Button asChild intent="secondary">

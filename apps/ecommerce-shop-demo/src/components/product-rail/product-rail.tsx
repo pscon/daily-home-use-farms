@@ -50,8 +50,8 @@ export function ProductRail({
           ))}
         </CarouselContent>
         <div className="product-rail__controls">
-          <CarouselPrevious aria-label={`Previous pieces in ${title}`} />
-          <CarouselNext aria-label={`More pieces in ${title}`} />
+          <CarouselPrevious aria-label={`Previous products in ${title}`} />
+          <CarouselNext aria-label={`More products in ${title}`} />
         </div>
       </Carousel>
     </section>

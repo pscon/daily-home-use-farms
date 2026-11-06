@@ -11,17 +11,16 @@ export default function NotFound() {
   return (
     <div className="page page--message">
       <p className="page__eyebrow">Error 404</p>
-      <h1 className="page__title">This page has moved on</h1>
+      <h1 className="page__title">We couldn’t find that page</h1>
       <p className="page__lede">
-        The piece or page you were looking for isn't here any more. It may have sold through, or the
-        link may be out of date.
+        The product or page you were looking for may have moved, or the link may be out of date.
       </p>
       <div className="page__actions">
         <Button asChild>
-          <Link href="/collections/new-arrivals">Shop new arrivals</Link>
+          <Link href="/collections/all">Shop fresh eggs</Link>
         </Button>
         <Button asChild intent="secondary">
-          <Link href="/">Back to the house</Link>
+          <Link href="/">Back to the farm</Link>
         </Button>
       </div>
     </div>
