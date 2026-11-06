@@ -13,6 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@nuvui/react";
+import { PhoneCallIcon } from "@nuvui/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { CartSheet } from "@/components/cart/cart-sheet";
@@ -84,6 +85,7 @@ export function SiteHeader() {
         </NavigationMenu>
       </NavbarNav>
       <NavbarActions className="site-header__actions">
+        <Button className="site-header__call" asChild intent="ghost" size="sm"><a href={`tel:${site.phoneHref}`} aria-label={`Call Daily Home Use Farm on ${site.phone}`}><PhoneCallIcon size={16} /> Call</a></Button>
         <Button className="site-header__whatsapp" asChild intent="ghost" size="sm"><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
         <CartSheet />
       </NavbarActions>
@@ -95,6 +97,9 @@ export function SiteHeader() {
           <NavbarLink asChild><Link href="/about">Our farm</Link></NavbarLink>
           <NavbarLink asChild><Link href="/#ordering">How to order</Link></NavbarLink>
           <NavbarLink asChild><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp us</a></NavbarLink>
+          <p className="site-header__mobile-title">Call the farm</p>
+          <NavbarLink asChild><a className="site-header__phone-link" href={`tel:${site.phoneHref}`}><PhoneCallIcon size={17} /> {site.phone}</a></NavbarLink>
+          <NavbarLink asChild><a className="site-header__phone-link" href={`tel:${site.secondaryPhoneHref}`}><PhoneCallIcon size={17} /> {site.secondaryPhone}</a></NavbarLink>
         </div>
       </NavbarMenu>
     </Navbar>

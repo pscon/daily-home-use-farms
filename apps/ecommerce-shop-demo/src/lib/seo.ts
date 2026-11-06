@@ -19,6 +19,11 @@ export function organizationJsonLd() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/icon.svg"),
     email: site.email,
+    telephone: site.phoneHref,
+    contactPoint: [
+      { "@type": "ContactPoint", telephone: site.phoneHref, contactType: "sales", availableLanguage: "English" },
+      { "@type": "ContactPoint", telephone: site.secondaryPhoneHref, contactType: "sales", availableLanguage: "English" },
+    ],
   };
 }
 
