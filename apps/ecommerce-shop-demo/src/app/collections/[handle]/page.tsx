@@ -124,7 +124,7 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
       </div>
       <section className="egg-origin" aria-labelledby="egg-origin-title">
         <div className="egg-origin__media egg-origin__media--hens">
-          <Image src="/farm/hens-coop.jpg" alt="Hens outside a chicken coop" fill sizes="(min-width: 64rem) 48vw, 100vw" />
+          <Image src="/farm/hen-laying-eggs.jpg" alt="Brown laying hen in a nesting box beside fresh eggs" fill sizes="(min-width: 64rem) 48vw, 100vw" />
         </div>
         <div className="egg-origin__copy">
           <p>From the laying house</p>

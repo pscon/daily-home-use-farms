@@ -50,7 +50,7 @@ function ProductsPanel() {
       <NavigationMenuLink asChild>
         <Link className="site-header__feature" href="/poultry/chickens">
           <span className="site-header__feature-media">
-            <Image className="site-header__feature-image" src="/farm/hens-coop.jpg" alt="Hens outside a chicken coop" width={440} height={550} sizes="220px" />
+            <Image className="site-header__feature-image" src="/farm/hen-laying-eggs.jpg" alt="Brown laying hen in a nesting box beside fresh eggs" width={440} height={550} sizes="220px" />
           </span>
           <span className="site-header__feature-label">Life around the coop</span>
           <span className="site-header__feature-copy">See our poultry and ask about today’s availability.</span>
