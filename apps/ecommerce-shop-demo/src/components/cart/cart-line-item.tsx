@@ -51,12 +51,12 @@ export function CartLineItem({ line, onNavigate }: CartLineItemProps) {
           </Link>
         </ItemTitle>
         <ItemDescription>
-          {line.color} · Size {line.size}
+          {line.color} · {line.size} eggs · 30 per crate
         </ItemDescription>
         <div className="cart-line-item__row">
           <NumberField
             className="cart-line-item__quantity"
-            aria-label={`Quantity of ${line.title}, size ${line.size}`}
+            aria-label={`Number of ${line.title} crates`}
             value={line.quantity}
             min={1}
             max={maxQuantity}
@@ -73,7 +73,7 @@ export function CartLineItem({ line, onNavigate }: CartLineItemProps) {
         <Button
           intent="ghost"
           size="sm"
-          aria-label={`Remove ${line.title}, size ${line.size}`}
+          aria-label={`Remove ${line.title} from bag`}
           onClick={() => cart.remove(line)}
         >
           <CloseIcon size={16} />

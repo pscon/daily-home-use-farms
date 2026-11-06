@@ -19,6 +19,11 @@ export function organizationJsonLd() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/icon.svg"),
     email: site.email,
+    telephone: site.phoneHref,
+    contactPoint: [
+      { "@type": "ContactPoint", telephone: site.phoneHref, contactType: "sales", availableLanguage: "English" },
+      { "@type": "ContactPoint", telephone: site.secondaryPhoneHref, contactType: "sales", availableLanguage: "English" },
+    ],
   };
 }
 
@@ -111,11 +116,8 @@ export function productJsonLd(product: Product) {
         itemCondition: "https://schema.org/NewCondition",
         hasMerchantReturnPolicy: {
           "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: site.returnDays,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
+          applicableCountry: "NG",
+          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
         },
       },
     })),

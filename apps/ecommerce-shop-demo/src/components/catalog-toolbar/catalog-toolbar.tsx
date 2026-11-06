@@ -30,7 +30,7 @@ function href(
   return `${pathname}${query ? `?${query}` : ""}` as Route;
 }
 
-// The links that narrow a collection, how many pieces are shown, and the order they're in.
+// The links that narrow a collection, how many products are shown, and the order they're in.
 // The refinements are plain links, so every filtered view can be reached without script.
 export function CatalogToolbar({
   pathname,
@@ -81,7 +81,7 @@ export function CatalogToolbar({
       )}
       <div className="catalog-toolbar__meta">
         <p className="catalog-toolbar__total" aria-live="polite">
-          {count} {count === 1 ? "piece" : "pieces"}
+          {count} {count === 1 ? "product" : "products"}
         </p>
         <SortSelect value={sort} pathname={pathname} params={refine ? { ...keep, refine } : keep} />
       </div>

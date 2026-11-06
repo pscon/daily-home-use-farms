@@ -26,7 +26,6 @@ import { CartLineItem } from "./cart-line-item";
 import { useCartDrawer } from "./cart-provider";
 import { cartTotals, useCartLines } from "./cart-store";
 import { CheckoutButton } from "./checkout-button";
-import { ShippingProgress } from "./shipping-progress";
 import "./cart-sheet.scss";
 
 // The header's bag button and the drawer it opens.
@@ -43,7 +42,7 @@ export function CartSheet() {
           intent="ghost"
           className="cart-sheet__trigger"
           aria-label={
-            count === 0 ? "Bag, empty" : `Bag, ${count} ${count === 1 ? "piece" : "pieces"}`
+            count === 0 ? "Bag, empty" : `Bag, ${count} ${count === 1 ? "crate" : "crates"}`
           }
         >
           <ShoppingBagIcon size={22} />
@@ -60,7 +59,7 @@ export function CartSheet() {
           <SheetDescription>
             {count === 0
               ? "Nothing here yet."
-              : `${count} ${count === 1 ? "piece" : "pieces"}, reserved while you shop.`}
+              : `${count} ${count === 1 ? "crate" : "crates"} ready to confirm.`}
           </SheetDescription>
         </SheetHeader>
         <SheetBody className="cart-sheet__body">
@@ -73,20 +72,19 @@ export function CartSheet() {
                 <h3>Your bag is empty</h3>
               </EmptyTitle>
               <EmptyDescription>
-                Discover the new season, or start with the pieces our clients love most.
+                Choose Small, Medium or Big eggs in complete crates of 30.
               </EmptyDescription>
               <EmptyActions>
                 <SheetClose asChild>
                   <Button asChild>
-                    <Link href="/collections/new-arrivals">Shop new arrivals</Link>
+                    <Link href="/collections/all">Shop fresh eggs</Link>
                   </Button>
                 </SheetClose>
               </EmptyActions>
             </Empty>
           ) : (
             <>
-              <ShippingProgress subtotal={subtotal} />
-              <ItemGroup aria-label="Pieces in your bag" className="cart-sheet__lines">
+              <ItemGroup aria-label="Egg crates in your bag" className="cart-sheet__lines">
                 {lines.map((line) => (
                   <CartLineItem
                     key={`${line.handle}:${line.size}`}
@@ -106,7 +104,7 @@ export function CartSheet() {
                 <Price price={subtotal} />
               </dd>
             </dl>
-            <p className="cart-sheet__note">Shipping and taxes are calculated at checkout.</p>
+            <p className="cart-sheet__note">Delivery fee, availability and the final total are confirmed with the farm on WhatsApp before payment.</p>
             <Separator className="cart-sheet__rule" />
             <CheckoutButton className="cart-sheet__checkout" />
             <SheetClose asChild>

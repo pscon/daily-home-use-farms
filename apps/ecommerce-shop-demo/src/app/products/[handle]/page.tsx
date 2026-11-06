@@ -104,7 +104,7 @@ async function Product({ params, searchParams }: PageProps<"/products/[handle]">
             </div>
             <div className="product__price">
               <Price price={product.price} compareAtPrice={product.compareAtPrice} size="lg" />
-              {product.compareAtPrice && <Badge intent="danger">Archive sale</Badge>}
+              {product.compareAtPrice && <Badge intent="danger">Special price</Badge>}
             </div>
             <p className="product__summary">{product.summary}</p>
             <p className="product__color">

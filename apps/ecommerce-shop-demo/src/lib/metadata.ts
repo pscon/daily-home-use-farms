@@ -13,10 +13,10 @@ interface PageMetadataInput {
 }
 
 const defaultImage = {
-  url: "/opengraph-image",
+  url: "/farm/daily-farm-social.jpg",
   width: 1200,
   height: 630,
-  alt: `${site.name}: ${site.tagline}`,
+  alt: "A brown laying hen beside fresh eggs at the nest",
 };
 
 // Every page's metadata comes through here, so each has a canonical URL, its own Open Graph
@@ -28,7 +28,7 @@ export function pageMetadata({
   image = defaultImage,
   noindex = false,
 }: PageMetadataInput): Metadata {
-  const fullTitle = `${title} | ${site.name}`;
+  const fullTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
   return {
     title,
     description,

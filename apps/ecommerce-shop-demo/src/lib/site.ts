@@ -3,9 +3,9 @@ export const site = {
   tagline: "Fresh eggs, gathered daily",
   description: "Fresh Small, Medium and Big eggs sold in 30-egg crates from our farm in Sango Ota, Ogun State.",
   locale: "en-NG", currency: "NGN", email: "hello@dailyhomeusefarm.com",
-  phone: "08023457318", whatsapp: "2348023457318",
+  phone: "0802 345 7318", phoneHref: "+2348023457318", whatsapp: "2348023457318",
+  secondaryPhone: "07043 572217", secondaryPhoneHref: "+2347043572217",
   address: "22 Tarmac Road, Sango Ota, Ogun State", hours: "7am–10pm daily",
-  freeShippingThreshold: 0, returnDays: 0,
   themeColor: { light: "#f3eee4", dark: "#18261c" },
 } as const;
 

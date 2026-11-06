@@ -126,7 +126,7 @@ export async function getCollectionRefinements(
   const collection = collections.find((entry) => entry.handle === handle);
   if (!collection) return [];
   const inCollection = products.filter((product) => matches(collection.rule, product));
-  // A collection of one kind of garment is narrowed by who it's for, and the reverse.
+  // A collection can be narrowed using any refinements configured for its products.
   const key = collection.rule.kind === "category" ? "gender" : "category";
   const counts = new Map<Category | Gender, number>();
   for (const product of inCollection) {

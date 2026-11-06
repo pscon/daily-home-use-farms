@@ -12,9 +12,8 @@ import { absoluteUrl, breadcrumbJsonLd } from "@/lib/seo";
 import "./collections.scss";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Collections",
-  description:
-    "Explore every collection: womenswear, menswear, unisex and youth, outerwear, fleece and fine jersey, new arrivals and the archive sale.",
+  title: "Egg collections",
+  description: "Shop fresh Small, Medium and Big eggs in complete crates of 30 from our farm in Sango Ota.",
   path: "/collections",
 });
 
@@ -29,9 +28,9 @@ export default async function CollectionsPage() {
     <>
       <CatalogHeader
         trail={trail}
-        eyebrow="The wardrobe"
-        title="Collections"
-        description="Every collection in the house, from the season's newest silhouettes to the last pieces of the archive."
+        eyebrow="Fresh from Sango Ota"
+        title="Egg collections"
+        description="Browse all available egg sizes. Every option is packed as a complete crate of 30."
       />
       <div className="page">
         <ul className="collections" aria-label="All collections">
