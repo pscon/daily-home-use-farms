@@ -140,7 +140,7 @@
   }
 }
 
-.site-header__mark{display:inline-block;flex:0 0 auto;width:1.7rem;height:2rem;margin-right:.65rem;border:1px solid currentColor;border-radius:50% 50% 46% 46%;transform:rotate(5deg)}
+.site-header__mark{display:inline-block;flex:0 0 auto;width:1.55rem;height:1.9rem;margin-right:.7rem;border:1px solid #9d6b12;border-radius:52% 52% 48% 48%;background:linear-gradient(145deg,#fae79f 5%,#d7aa34 53%,#9d6b12);box-shadow:inset .15rem .18rem .2rem #fff7cc8c,0 .12rem .3rem #5e451326;transform:rotate(5deg)}
 .site-header__brand-short{display:none}
 .site-header__whatsapp{padding:.55rem .75rem;border-radius:var(--radius-full);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
 .site-header__panel-link{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1rem;border-radius:var(--radius-full);color:inherit;font:500 1.35rem/1 var(--app-font-display);text-decoration:none;transition:background-color 180ms ease,transform 180ms ease}
