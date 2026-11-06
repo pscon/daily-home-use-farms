@@ -1,5 +1,6 @@
 import { Button, Empty, EmptyActions, EmptyDescription, EmptyTitle } from "@nuvui/react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -20,6 +21,7 @@ import { PRODUCT_IMAGE_SIZE } from "@/lib/catalog/types";
 import { pageMetadata } from "@/lib/metadata";
 import { href } from "@/lib/routes";
 import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/seo";
+import "./collection-detail.scss";
 
 // Prerendered at build; an unknown handle gets a 404 status from src/proxy.ts.
 export async function generateStaticParams() {
@@ -120,6 +122,21 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
           </Empty>
         )}
       </div>
+      <section className="egg-origin" aria-labelledby="egg-origin-title">
+        <div className="egg-origin__media egg-origin__media--hens">
+          <Image src="/farm/hens-coop.jpg" alt="Hens outside a chicken coop" fill sizes="(min-width: 64rem) 48vw, 100vw" />
+        </div>
+        <div className="egg-origin__copy">
+          <p>From the laying house</p>
+          <h2 id="egg-origin-title">Fresh eggs begin with the birds.</h2>
+          <p>We bring together daily egg supply and straightforward ordering from Sango Ota. Choose a complete crate of 30, then confirm pickup or delivery with the farm.</p>
+          <Link href="/poultry/chickens">See our chickens <span aria-hidden="true">↗</span></Link>
+        </div>
+        <div className="egg-origin__media egg-origin__media--stock">
+          <Image src="/farm/eggs-room.jpeg" alt="Crates of eggs at Daily Home Use Farm" fill sizes="(min-width: 64rem) 40vw, 100vw" />
+          <span>Our own farm stock · Sango Ota</span>
+        </div>
+      </section>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={itemListJsonLd(collection.title, products)} />
     </>

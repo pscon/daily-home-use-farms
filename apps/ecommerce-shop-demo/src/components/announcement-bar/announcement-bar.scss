@@ -28,3 +28,8 @@
     @include a.focus-ring;
   }
 }
+
+@media (max-width: 32rem) {
+  .announcement-bar { padding: .7rem 1rem; font-size: .66rem; line-height: 1.45; letter-spacing: .045em; }
+  .announcement-bar__text { max-width: 22rem; }
+}

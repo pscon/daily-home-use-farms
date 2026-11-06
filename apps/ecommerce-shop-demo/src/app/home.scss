@@ -10,3 +10,24 @@
 .farm-button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.35rem 1.6rem;margin-top:3rem;text-align:left;transition:background .2s}
 .farm-button:hover{background:#31583b}
 @media(max-width:56rem){.farm-location{grid-template-columns:1fr;min-height:0;gap:3.5rem;padding:4.5rem 1.25rem}.farm-location__intro{gap:2rem}.farm-location h2{font-size:clamp(4rem,17vw,6rem)}.farm-location__details{gap:2rem}.farm-button{margin-top:0}}
+
+.farm-poultry__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.farm-poultry__card{min-width:0;background:var(--color-surface)}
+.farm-poultry__media{position:relative;min-height:31rem;overflow:hidden;background:var(--app-color-canvas)}
+.farm-poultry__media img{object-fit:cover;transition:transform 900ms var(--ease-out)}
+.farm-poultry__card:hover img{transform:scale(1.025)}
+.farm-poultry__card>div:last-child{padding:1.5rem 0}
+.farm-poultry__card span{color:var(--color-muted-foreground);font-size:.65rem;text-transform:uppercase;letter-spacing:.15em}
+.farm-poultry__card h3{margin:.6rem 0 .35rem;font:500 2.4rem/1 var(--app-font-display)}
+.farm-poultry__card p{min-height:3rem;margin:.4rem 0 1.2rem;color:var(--color-muted-foreground)}
+.farm-poultry__card a{text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;text-decoration:underline;text-underline-offset:.35rem}
+.farm-film{position:relative;display:grid;min-height:min(78vh,52rem);overflow:hidden;color:#fff;isolation:isolate}
+.farm-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.farm-film__scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,25,16,.78),rgba(15,25,16,.2) 68%,rgba(15,25,16,.08))}
+.farm-film__content{align-self:center;max-width:46rem;padding:7vw}
+.farm-film h2{margin:0;font:500 clamp(4rem,7vw,7.5rem)/.86 var(--app-font-display);letter-spacing:-.05em}
+.farm-film h2 em{font-weight:400;color:#d7e3ce}
+.farm-film__content>p:not(.farm-kicker){max-width:32rem;margin-top:1.5rem;color:#ffffffc4}
+.farm-film__credit{position:absolute;right:1.5rem;bottom:1rem;margin:0;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:#ffffff9c}
+
+@media(max-width:56rem){.farm-heading h2,.farm-editorial h2,.farm-steps h2,.farm-story h2{font-size:clamp(3.3rem,14vw,5rem)}.farm-poultry__grid{grid-template-columns:1fr;gap:3rem}.farm-poultry__media{min-height:28rem}.farm-poultry__card p{min-height:0}.farm-film{min-height:43rem}.farm-film__scrim{background:linear-gradient(0deg,rgba(15,25,16,.82),rgba(15,25,16,.12))}.farm-film__content{align-self:end;padding:4rem 1.25rem}.farm-film h2{font-size:clamp(3.7rem,16vw,5.5rem)}.farm-film__credit{right:1.25rem;bottom:.7rem;left:1.25rem}.farm-story h2{overflow-wrap:anywhere}}

@@ -93,9 +93,14 @@
 
   &__feature {
     display: grid;
-    gap: calc(var(--spacing) * 2);
+    gap: calc(var(--spacing) * 1.5);
     color: inherit;
     text-decoration: none;
+  }
+
+  &__feature-media {
+    overflow: hidden;
+    border-radius: var(--radius-sm);
   }
 
   &__feature-image {
@@ -105,11 +110,20 @@
     border-radius: var(--radius-sm);
     background-color: var(--app-color-canvas);
     object-fit: cover;
+    transition: transform 700ms var(--ease-out);
   }
+
+  &__feature:hover &__feature-image { transform: scale(1.035); }
 
   &__feature-label {
     font-family: var(--app-font-display);
     font-size: var(--text-lg);
+  }
+
+  &__feature-copy {
+    color: var(--color-muted-foreground);
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
   }
 
   &__mobile {
@@ -125,3 +139,14 @@
     margin-block: calc(var(--spacing) * 3);
   }
 }
+
+.site-header__mark{display:inline-block;flex:0 0 auto;width:1.7rem;height:2rem;margin-right:.65rem;border:1px solid currentColor;border-radius:50% 50% 46% 46%;transform:rotate(5deg)}
+.site-header__brand-short{display:none}
+.site-header__whatsapp{padding:.55rem .75rem;border-radius:var(--radius-full);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+.site-header__panel-link{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1rem;border-radius:var(--radius-full);color:inherit;font:500 1.35rem/1 var(--app-font-display);text-decoration:none;transition:background-color 180ms ease,transform 180ms ease}
+.site-header__panel-link span{font-family:var(--app-font-sans);font-size:.75rem;opacity:0;transform:translate(-.25rem,.25rem);transition:opacity 180ms ease,transform 180ms ease}
+.site-header__panel-link:hover,.site-header__panel-link:focus-visible,.site-header__panel-link--featured{background:var(--color-muted)}
+.site-header__panel-link:hover span,.site-header__panel-link:focus-visible span{opacity:1;transform:none}
+
+@media(max-width:63.99rem){.site-header{--nuv-navbar-padding:1rem;--nuv-navbar-gap:.35rem;max-width:100vw}.site-header__brand{max-width:calc(100vw - 8.8rem);min-width:0;font-size:1rem;letter-spacing:.12em;overflow:hidden}.site-header__brand-full{overflow:hidden;text-overflow:ellipsis}.site-header__mark{width:1.3rem;height:1.55rem;margin-right:.4rem}.site-header__whatsapp{display:none}.site-header__actions{display:flex;align-items:center;flex:0 0 auto}.site-header__mobile-title{margin-top:1rem!important}}
+@media(max-width:25rem){.site-header__brand-full{display:none}.site-header__brand-short{display:inline}.site-header__brand{max-width:10rem}}
