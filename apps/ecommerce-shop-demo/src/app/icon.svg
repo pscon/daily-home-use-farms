@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="icon-title">
   <title id="icon-title">Daily Home Use Farm</title>
-  <rect width="64" height="64" rx="6" fill="#1d1a17"/>
-  <rect x="5" y="5" width="54" height="54" rx="3" fill="none" stroke="#b89a5e" stroke-width="1"/>
-  <path d="M19 46V18h3.2L42 40.6V18h3v28h-3.2L22 23.4V46z" fill="#faf8f4"/>
+  <rect width="64" height="64" rx="14" fill="#183221"/>
+  <defs>
+    <linearGradient id="gold" x1="18" y1="12" x2="48" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8df8b"/>
+      <stop offset=".52" stop-color="#d5a72f"/>
+      <stop offset="1" stop-color="#9d6b12"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 9c-8.3 0-17 15.8-17 28.2C15 48 22.1 55 32 55s17-7 17-17.8C49 24.8 40.3 9 32 9Z" fill="url(#gold)"/>
+  <path d="M25.5 22.5c-3.1 4.8-5 10.2-5 14.8" fill="none" stroke="#fff4c7" stroke-linecap="round" stroke-width="3" opacity=".72"/>
+  <path d="M26 44V27h4.2c6.1 0 9.8 3.1 9.8 8.5S36.3 44 30.2 44H26Zm4-3.5h.6c3.4 0 5.3-1.7 5.3-5s-1.9-5-5.3-5H30v10Z" fill="#17301f"/>
 </svg>
