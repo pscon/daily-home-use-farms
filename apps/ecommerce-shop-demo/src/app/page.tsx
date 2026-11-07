@@ -15,7 +15,7 @@ import "./home.scss";
 export const metadata: Metadata = { ...pageMetadata({ title: site.name, description: site.description, path: "/" }), title: { absolute: `${site.name} | ${site.tagline}` } };
 
 const depotFaqs = [
-  { question: "Where can I buy fresh eggs in Sango Ota?", answer: "Daily Home Use Depot supplies fresh eggs from 22 Tarmac Road, Sango Ota, Ogun State. Pickup is available daily from 7am to 10pm." },
+  { question: "Where can I buy fresh eggs in Sango Ota?", answer: "Daily Home Use Depot supplies fresh eggs from 22 Tarmac Road, Sango Ota, Ogun State, Nigeria. Pickup is available daily from 7am to 10pm." },
   { question: "How many eggs are in one crate?", answer: "Every complete crate contains 30 eggs. The minimum order is one crate, and there is no maximum order quantity." },
   { question: "What egg sizes are available?", answer: "Small, Medium and Big eggs are available, subject to the depot's current daily stock." },
   { question: "How do I get today's egg price?", answer: `Call or WhatsApp ${site.phone}, or call ${site.secondaryPhone}. The depot confirms the current price and availability before payment.` },
