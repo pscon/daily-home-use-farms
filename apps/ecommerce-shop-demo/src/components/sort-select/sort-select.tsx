@@ -8,6 +8,8 @@ import { SORT_LABELS } from "@/lib/catalog/labels";
 import { SORTS, type Sort } from "@/lib/catalog/types";
 import "./sort-select.scss";
 
+const visibleSorts = SORTS.filter((sort) => sort !== "price-asc" && sort !== "price-desc");
+
 interface SortSelectProps {
   value: Sort;
   /** The page's path, and the other search params to keep. */
@@ -48,7 +50,7 @@ export function SortSelect({ value, pathname, params = {} }: SortSelectProps) {
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          {SORTS.map((sort) => (
+          {visibleSorts.map((sort) => (
             <SelectItem key={sort} value={sort}>
               {SORT_LABELS[sort]}
             </SelectItem>

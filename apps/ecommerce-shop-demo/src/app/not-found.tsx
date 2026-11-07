@@ -20,7 +20,7 @@ export default function NotFound() {
           <Link href="/collections/all">Shop fresh eggs</Link>
         </Button>
         <Button asChild intent="secondary">
-          <Link href="/">Back to the farm</Link>
+          <Link href="/">Back to the egg depot</Link>
         </Button>
       </div>
     </div>

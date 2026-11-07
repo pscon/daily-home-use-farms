@@ -1,11 +1,9 @@
 import { GemIcon, TruckIcon } from "@nuvui/icons";
-import { Badge, Rating } from "@nuvui/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { JsonLd } from "@/components/json-ld/json-ld";
 import { ProductSkeleton } from "@/components/page-skeleton/page-skeleton";
-import { Price } from "@/components/price/price";
 import { ProductDetails } from "@/components/product-details/product-details";
 import { ProductGallery } from "@/components/product-gallery/product-gallery";
 import { ProductGrid } from "@/components/product-grid/product-grid";
@@ -51,8 +49,6 @@ export async function generateMetadata({
         : {}),
     }),
     other: {
-      "product:price:amount": product.price.toFixed(2),
-      "product:price:currency": site.currency,
       "product:availability": "in stock",
       "product:brand": site.name,
     },
@@ -98,14 +94,7 @@ async function Product({ params, searchParams }: PageProps<"/products/[handle]">
             <h1 id="product-title" className="product__title">
               {product.title}
             </h1>
-            <div className="product__rating">
-              <Rating readOnly size="sm" value={product.rating} />
-              <span className="product__rating-text">Available now · temporary price</span>
-            </div>
-            <div className="product__price">
-              <Price price={product.price} compareAtPrice={product.compareAtPrice} size="lg" />
-              {product.compareAtPrice && <Badge intent="danger">Special price</Badge>}
-            </div>
+            <div className="product__rating"><span className="product__rating-text">Available now · Contact us for today’s depot price</span></div>
             <p className="product__summary">{product.summary}</p>
             <p className="product__color">
               <span className="product__label">Colour</span> {product.color}
@@ -148,7 +137,7 @@ async function Product({ params, searchParams }: PageProps<"/products/[handle]">
       <section className="section" aria-labelledby="related-title">
         <SectionHeading
           id="related-title"
-          eyebrow="More from the farm"
+          eyebrow="More from the egg depot"
           title="Other crate sizes"
           action={{ label: "Shop all", href: "/collections/all" }}
         />

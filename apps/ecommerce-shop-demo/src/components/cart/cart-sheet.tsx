@@ -9,7 +9,6 @@ import {
   EmptyMedia,
   EmptyTitle,
   ItemGroup,
-  Separator,
   Sheet,
   SheetBody,
   SheetClose,
@@ -21,7 +20,6 @@ import {
   SheetTrigger,
 } from "@nuvui/react";
 import Link from "next/link";
-import { Price } from "@/components/price/price";
 import { CartLineItem } from "./cart-line-item";
 import { useCartDrawer } from "./cart-provider";
 import { cartTotals, useCartLines } from "./cart-store";
@@ -32,7 +30,7 @@ import "./cart-sheet.scss";
 export function CartSheet() {
   const lines = useCartLines();
   const { open, setOpen } = useCartDrawer();
-  const { count, subtotal } = cartTotals(lines);
+  const { count } = cartTotals(lines);
   const close = () => setOpen(false);
 
   return (
@@ -98,14 +96,7 @@ export function CartSheet() {
         </SheetBody>
         {count > 0 && (
           <SheetFooter className="cart-sheet__footer">
-            <dl className="cart-sheet__summary">
-              <dt>Subtotal</dt>
-              <dd>
-                <Price price={subtotal} />
-              </dd>
-            </dl>
-            <p className="cart-sheet__note">Delivery fee, availability and the final total are confirmed with the farm on WhatsApp before payment.</p>
-            <Separator className="cart-sheet__rule" />
+            <p className="cart-sheet__note">Today’s egg price, availability, delivery fee and final total are confirmed with the egg depot on WhatsApp or by phone.</p>
             <CheckoutButton className="cart-sheet__checkout" />
             <SheetClose asChild>
               <Button asChild intent="secondary" className="cart-sheet__view">

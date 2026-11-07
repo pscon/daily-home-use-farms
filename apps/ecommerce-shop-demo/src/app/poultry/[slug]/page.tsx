@@ -40,11 +40,11 @@ export default async function PoultryDetailPage({ params }: PageProps<"/poultry/
       <section className="poultry-page__details">
         <p className="poultry-page__eyebrow">Before you order</p>
         <h2>Availability first.<br/><em>Then we make it simple.</em></h2>
-        <div><p>{page.note}</p><p>Pickup is available daily from 7am to 10pm at 22 Tarmac Road, Sango Ota. Delivery is agreed by phone.</p></div>
+        <div><p>{page.note}</p><p>Pickup is available daily from 7am to 10pm at our egg depot, 22 Tarmac Road, Sango Ota. Delivery is agreed by phone.</p></div>
       </section>
       {page.slug === "chickens" && <section className="poultry-page__film"><video autoPlay muted loop playsInline preload="metadata" poster="/farm/hens-coop.jpg"><source src="/farm/hens-video.mp4" type="video/mp4" /></video><div><p className="poultry-page__eyebrow">Around the laying house</p><h2>See life around the coop.</h2><p>Supporting farm footage gives you a closer look at the birds behind the everyday egg.</p></div></section>}
       <section className="poultry-page__more">
-        <p className="poultry-page__eyebrow">Also from the farm</p>
+        <p className="poultry-page__eyebrow">Also from the depot</p>
         <div>{poultryPages.filter((item) => item.slug !== page.slug).map((item) => <Link href={`/poultry/${item.slug}`} key={item.slug}><span>{item.title}</span><span aria-hidden="true">↗</span></Link>)}</div>
       </section>
     </article>

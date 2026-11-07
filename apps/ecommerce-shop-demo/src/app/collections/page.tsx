@@ -13,7 +13,7 @@ import "./collections.scss";
 
 export const metadata: Metadata = pageMetadata({
   title: "Egg collections",
-  description: "Shop fresh Small, Medium and Big eggs in complete crates of 30 from our farm in Sango Ota.",
+  description: "Shop fresh Small, Medium and Big eggs in complete crates of 30 from our Sango Ota egg depot.",
   path: "/collections",
 });
 
