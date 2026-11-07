@@ -96,30 +96,6 @@ export function productJsonLd(product: Product) {
       size,
       color: product.color,
       image: absoluteUrl(product.images[0]?.src ?? "/icon.svg"),
-      offers: {
-        "@type": "Offer",
-        url: `${url}?size=${size}`,
-        price: product.price.toFixed(2),
-        priceCurrency: site.currency,
-        // On sale: the original price, which search results can show struck through.
-        ...(product.compareAtPrice
-          ? {
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                priceType: "https://schema.org/ListPrice",
-                price: product.compareAtPrice.toFixed(2),
-                priceCurrency: site.currency,
-              },
-            }
-          : {}),
-        availability: "https://schema.org/InStock",
-        itemCondition: "https://schema.org/NewCondition",
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "NG",
-          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-        },
-      },
     })),
   };
 }

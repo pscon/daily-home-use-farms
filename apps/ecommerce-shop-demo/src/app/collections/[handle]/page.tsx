@@ -128,12 +128,12 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
         <div className="egg-origin__copy">
           <p>From the laying house</p>
           <h2 id="egg-origin-title">Fresh eggs begin with the birds.</h2>
-          <p>We bring together daily egg supply and straightforward ordering from Sango Ota. Choose a complete crate of 30, then confirm pickup or delivery with the farm.</p>
+          <p>We bring together daily egg supply and straightforward ordering from Sango Ota. Choose a complete crate of 30, then contact the egg depot for today’s price, pickup or delivery.</p>
           <Link href="/poultry/chickens">See our chickens <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="egg-origin__media egg-origin__media--stock">
           <Image src="/farm/eggs-room.jpeg" alt="Crates of eggs at Daily Home Use Farm" fill sizes="(min-width: 64rem) 40vw, 100vw" />
-          <span>Our own farm stock · Sango Ota</span>
+          <span>Our own depot stock · Sango Ota</span>
         </div>
       </section>
       <JsonLd data={breadcrumbJsonLd(trail)} />

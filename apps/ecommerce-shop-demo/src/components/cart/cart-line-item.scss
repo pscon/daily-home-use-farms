@@ -60,6 +60,11 @@
     --nuv-number-field-radius: var(--radius-full);
   }
 
+  &__price-note {
+    color: var(--color-muted-foreground);
+    font-size: var(--text-xs);
+  }
+
   &__actions {
     align-self: flex-start;
   }

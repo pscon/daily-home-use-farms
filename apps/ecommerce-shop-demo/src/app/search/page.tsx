@@ -34,7 +34,7 @@ export async function generateMetadata({ searchParams }: PageProps<"/search">): 
   const { q } = parseSearchParams(await searchParams);
   return pageMetadata({
     title: q ? `Search results for “${q}”` : "Search",
-    description: "Search Daily Home Use Farm's available egg sizes and crates.",
+    description: "Search Daily Home Use Farm Limited's available egg sizes and crates.",
     path: "/search",
     // Result pages are thin and endless; keep them out of the index, but follow their links.
     noindex: true,
@@ -80,7 +80,7 @@ async function Search({ searchParams }: PageProps<"/search">) {
               name="q"
               defaultValue={q}
               placeholder="Try “medium eggs” or “crate of 30”"
-              aria-label="Search farm products"
+              aria-label="Search depot products"
               autoComplete="off"
               enterKeyHint="search"
               maxLength={80}

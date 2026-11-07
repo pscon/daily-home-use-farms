@@ -1,7 +1,6 @@
 import { AspectRatio, Badge } from "@nuvui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Price } from "@/components/price/price";
 import { NEW_ARRIVALS } from "@/lib/catalog/collections";
 import type { Product } from "@/lib/catalog/types";
 import { href } from "@/lib/routes";
@@ -26,10 +25,6 @@ export function ProductCard({
 }: ProductCardProps) {
   const Heading = `h${headingLevel}` as const;
   const [studio, worn] = product.images;
-  const discount = product.compareAtPrice
-    ? Math.round((1 - product.price / product.compareAtPrice) * 100)
-    : 0;
-
   return (
     <article className="product-card">
       <Link className="product-card__link" href={href(`/products/${product.handle}`)}>
@@ -57,8 +52,7 @@ export function ProductCard({
             )}
           </AspectRatio>
           <span className="product-card__badges">
-            {discount > 0 && <Badge intent="danger">−{discount}%</Badge>}
-            {discount === 0 && newArrivals.has(product.handle) && (
+            {newArrivals.has(product.handle) && (
               <Badge variant="outline" className="product-card__badge">
                 New
               </Badge>
@@ -68,7 +62,7 @@ export function ProductCard({
         <div className="product-card__body">
           <Heading className="product-card__title">{product.title}</Heading>
           <span className="product-card__meta">{product.color}</span>
-          <Price price={product.price} compareAtPrice={product.compareAtPrice} size="sm" />
+          <span className="product-card__meta">Contact us for today’s price</span>
         </div>
       </Link>
     </article>

@@ -14,7 +14,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useId } from "react";
-import { Price } from "@/components/price/price";
 import { href } from "@/lib/routes";
 import { type CartLine, cart, maxQuantity } from "./cart-store";
 import "./cart-line-item.scss";
@@ -66,7 +65,7 @@ export function CartLineItem({ line, onNavigate }: CartLineItemProps) {
             incrementLabel={`One more ${line.title}`}
             decrementLabel={`One fewer ${line.title}`}
           />
-          <Price price={line.price * line.quantity} size="sm" />
+          <span className="cart-line-item__price-note">Price confirmed on request</span>
         </div>
       </ItemContent>
       <ItemActions className="cart-line-item__actions">

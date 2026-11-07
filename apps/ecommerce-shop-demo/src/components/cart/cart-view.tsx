@@ -14,10 +14,8 @@ import {
   EmptyMedia,
   EmptyTitle,
   ItemGroup,
-  Separator,
 } from "@nuvui/react";
 import Link from "next/link";
-import { Price } from "@/components/price/price";
 import { CartLineItem } from "./cart-line-item";
 import { cartTotals, useCartLines } from "./cart-store";
 import { CheckoutButton } from "./checkout-button";
@@ -26,7 +24,7 @@ import "./cart-view.scss";
 // The bag as a page: every line with its quantity, and the order's summary beside it.
 export function CartView() {
   const lines = useCartLines();
-  const { count, subtotal } = cartTotals(lines);
+  const { count } = cartTotals(lines);
 
   if (count === 0) {
     return (
@@ -74,10 +72,8 @@ export function CartView() {
         <CardContent className="cart-view__totals">
           <dl className="cart-view__rows">
             <div className="cart-view__row">
-              <dt>Subtotal</dt>
-              <dd>
-                <Price price={subtotal} size="sm" />
-              </dd>
+              <dt>Egg price</dt>
+              <dd>Confirmed on WhatsApp or by phone</dd>
             </div>
             <div className="cart-view__row">
               <dt>Delivery</dt>
@@ -86,15 +82,6 @@ export function CartView() {
             <div className="cart-view__row">
               <dt>Wholesale</dt>
               <dd>Discussed for larger orders</dd>
-            </div>
-          </dl>
-          <Separator />
-          <dl className="cart-view__rows">
-            <div className="cart-view__row cart-view__row--total">
-              <dt>Estimated total</dt>
-              <dd>
-                <Price price={subtotal} />
-              </dd>
             </div>
           </dl>
         </CardContent>

@@ -67,8 +67,8 @@ export function SiteHeader() {
       <NavbarBrand>
         <Link className="site-header__brand" href="/" aria-label={`${site.name}, home`}>
           <span className="site-header__mark" aria-hidden="true" />
-          <span className="site-header__brand-full">Daily Home Use Farm</span>
-          <span className="site-header__brand-short">Daily Farm</span>
+          <span className="site-header__brand-full">{site.displayName}</span>
+          <span className="site-header__brand-short">{site.shortDisplayName}</span>
         </Link>
       </NavbarBrand>
       <NavbarNav className="site-header__nav" asChild>
@@ -79,7 +79,7 @@ export function SiteHeader() {
               <NavigationMenuContent><ProductsPanel /></NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem><NavigationMenuLink asChild><Link href="/collections/all">Shop eggs</Link></NavigationMenuLink></NavigationMenuItem>
-            <NavigationMenuItem><NavigationMenuLink asChild><Link href="/about">Our farm</Link></NavigationMenuLink></NavigationMenuItem>
+            <NavigationMenuItem><NavigationMenuLink asChild><Link href="/about">Our depot</Link></NavigationMenuLink></NavigationMenuItem>
             <NavigationMenuItem><NavigationMenuLink asChild><Link href="/#ordering">How to order</Link></NavigationMenuLink></NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -94,10 +94,10 @@ export function SiteHeader() {
           <p className="site-header__mobile-title">Products</p>
           {products.map((product) => <NavbarLink asChild key={product.href}><Link href={product.href}>{product.label}</Link></NavbarLink>)}
           <p className="site-header__mobile-title">Explore</p>
-          <NavbarLink asChild><Link href="/about">Our farm</Link></NavbarLink>
+          <NavbarLink asChild><Link href="/about">Our depot</Link></NavbarLink>
           <NavbarLink asChild><Link href="/#ordering">How to order</Link></NavbarLink>
           <NavbarLink asChild><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp us</a></NavbarLink>
-          <p className="site-header__mobile-title">Call the farm</p>
+          <p className="site-header__mobile-title">Call the depot</p>
           <NavbarLink asChild><a className="site-header__phone-link" href={`tel:${site.phoneHref}`}><PhoneCallIcon size={17} /> {site.phone}</a></NavbarLink>
           <NavbarLink asChild><a className="site-header__phone-link" href={`tel:${site.secondaryPhoneHref}`}><PhoneCallIcon size={17} /> {site.secondaryPhone}</a></NavbarLink>
         </div>
