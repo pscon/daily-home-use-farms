@@ -26,6 +26,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       images: product.images.map((image) => absoluteUrl(image.src)),
     })),
     { url: absoluteUrl("/about"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/poultry/chickens"), changeFrequency: "weekly", priority: 0.6 },
+    { url: absoluteUrl("/poultry/turkeys"), changeFrequency: "weekly", priority: 0.6 },
+    { url: absoluteUrl("/poultry/day-old-chicks"), changeFrequency: "weekly", priority: 0.6 },
     ...policies.map((policy) => ({
       url: absoluteUrl(`/policies/${policy.slug}`),
       lastModified: policy.updated,

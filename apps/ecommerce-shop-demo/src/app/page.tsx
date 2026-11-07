@@ -3,14 +3,26 @@ import { PhoneCallIcon } from "@nuvui/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/home/hero/hero";
+import { JsonLd } from "@/components/json-ld/json-ld";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { getProductsByHandles } from "@/lib/catalog";
 import { NEW_ARRIVALS } from "@/lib/catalog/collections";
 import { pageMetadata } from "@/lib/metadata";
+import { faqPageJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./home.scss";
 
 export const metadata: Metadata = { ...pageMetadata({ title: site.name, description: site.description, path: "/" }), title: { absolute: `${site.name} | ${site.tagline}` } };
+
+const depotFaqs = [
+  { question: "Where can I buy fresh eggs in Sango Ota?", answer: "Daily Home Use Depot supplies fresh eggs from 22 Tarmac Road, Sango Ota, Ogun State. Pickup is available daily from 7am to 10pm." },
+  { question: "How many eggs are in one crate?", answer: "Every complete crate contains 30 eggs. The minimum order is one crate, and there is no maximum order quantity." },
+  { question: "What egg sizes are available?", answer: "Small, Medium and Big eggs are available, subject to the depot's current daily stock." },
+  { question: "How do I get today's egg price?", answer: `Call or WhatsApp ${site.phone}, or call ${site.secondaryPhone}. The depot confirms the current price and availability before payment.` },
+  { question: "Do you offer delivery?", answer: "Yes. Delivery availability and the delivery fee are agreed by phone or WhatsApp after the order quantity and destination are confirmed." },
+  { question: "How do I pay for my egg order?", answer: "Bank transfer is the primary payment method. Account details are shared after the final total is confirmed. A Paystack payment link may also be provided." },
+] as const;
+
 export default async function HomePage() {
   const products = await getProductsByHandles(NEW_ARRIVALS);
   return <>
@@ -22,7 +34,9 @@ export default async function HomePage() {
     <section className="section farm-poultry" aria-labelledby="poultry-title"><div className="farm-heading"><div><p className="farm-kicker">Beyond the egg crates</p><h2 id="poultry-title">More from the depot.</h2></div><p>Eggs are our primary daily product. Explore each poultry page, then contact us about availability, quantities and current pricing.</p></div><div className="farm-poultry__grid"><article className="farm-poultry__card"><Link className="farm-poultry__media" href="/poultry/chickens"><Image src="/farm/hens-coop.jpg" alt="Hens outside a chicken coop" fill sizes="(min-width:64rem) 34vw,100vw" /></Link><div><span>01 · Poultry</span><h3>Chickens</h3><p>Ask about currently available birds and quantities.</p><Link href="/poultry/chickens">Explore chickens ↗</Link></div></article><article className="farm-poultry__card"><Link className="farm-poultry__media" href="/poultry/turkeys"><Image src="/farm/turkeys.jpg" alt="White turkeys in a farm enclosure" fill sizes="(min-width:64rem) 34vw,100vw" /></Link><div><span>02 · Poultry</span><h3>Turkeys</h3><p>Contact the depot for current turkey stock and pricing.</p><Link href="/poultry/turkeys">Explore turkeys ↗</Link></div></article><article className="farm-poultry__card"><Link className="farm-poultry__media" href="/poultry/day-old-chicks"><Image src="/farm/chick.jpg" alt="A young yellow chick" fill sizes="(min-width:64rem) 34vw,100vw" /></Link><div><span>03 · Young birds</span><h3>Day-old chicks</h3><p>Ask about batches, breeds and collection arrangements.</p><Link href="/poultry/day-old-chicks">Explore chicks ↗</Link></div></article></div></section>
     <section className="farm-film" aria-labelledby="farm-film-title"><video autoPlay muted loop playsInline preload="metadata" poster="/farm/hens-coop.jpg" aria-label="Supporting footage of hens at a farm"><source src="/farm/hens-video.mp4" type="video/mp4" /></video><div className="farm-film__scrim"/><div className="farm-film__content"><p className="farm-kicker">Life around the coop</p><h2 id="farm-film-title">A working farm,<br/><em>always in motion.</em></h2><p>Supporting poultry footage. Contact our egg depot for today’s actual availability.</p><a className="farm-link" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">Speak with the depot <span>↗</span></a></div><p className="farm-film__credit">Supporting footage: Pexels · Hens in Farm</p></section>
     <section className="section farm-steps" id="ordering"><div className="farm-heading"><div><p className="farm-kicker">A simple way to buy</p><h2>From bag to pickup.</h2></div></div><ol><li><span>01</span><h3>Choose</h3><p>Select a size and add one or more 30-egg crates.</p></li><li><span>02</span><h3>Confirm</h3><p>Send your bag on WhatsApp. We confirm today’s price, availability and delivery.</p></li><li><span>03</span><h3>Pay</h3><p>Pay to the bank account details shared after your final total is confirmed. A Paystack link may also be provided.</p></li></ol></section>
+    <section className="section farm-faq" aria-labelledby="depot-faq-title"><div className="farm-faq__intro"><p className="farm-kicker">Quick answers</p><h2 id="depot-faq-title">Buying eggs from our Sango Ota depot.</h2><p>Clear answers about crate sizes, daily prices, pickup, delivery and payment.</p></div><div className="farm-faq__list">{depotFaqs.map((item, index) => <details key={item.question} open={index === 0}><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></section>
     <section className="farm-story"><div><p className="farm-kicker">The real egg depot</p><h2>Plenty ready,<br/><em>every day.</em></h2><p>Our own photographs show the eggs handled by {site.name} at our Sango Ota depot.</p><a className="farm-link" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">Ask about today&apos;s stock and price <span>↗</span></a></div><div className="farm-story__image"><Image src="/farm/eggs-nest.jpg" alt="Brown eggs in cartons" fill sizes="(min-width:64rem) 45vw,100vw" /></div></section>
     <section className="farm-location"><div className="farm-location__intro"><p className="farm-kicker">Visit or call</p><h2>Open every day,<br/><em>7am to 10pm.</em></h2></div><div className="farm-location__details"><div className="farm-location__contact"><p>{site.address}</p><p><span>Call or WhatsApp</span><br/><a className="farm-location__phone" href={`tel:${site.phoneHref}`}><PhoneCallIcon size={18} />{site.phone}</a></p><p><span>Alternative call line</span><br/><a className="farm-location__phone" href={`tel:${site.secondaryPhoneHref}`}><PhoneCallIcon size={18} />{site.secondaryPhone}</a></p><p><a href={`mailto:${site.email}`}>{site.email}</a></p></div><a className="farm-button" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer">Start a WhatsApp chat <span aria-hidden="true">↗</span></a></div></section>
+    <JsonLd data={faqPageJsonLd(depotFaqs)} />
   </>;
 }

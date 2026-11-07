@@ -13,13 +13,34 @@ export function absoluteUrl(path: string): string {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness", "Store"],
     "@id": absoluteUrl("/#organization"),
     name: site.name,
+    alternateName: site.displayName,
+    description: site.description,
     url: absoluteUrl("/"),
     logo: absoluteUrl("/icon.svg"),
+    image: absoluteUrl("/farm/daily-farm-social.jpg"),
     email: site.email,
     telephone: site.phoneHref,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "22 Tarmac Road",
+      addressLocality: "Sango Ota",
+      addressRegion: "Ogun State",
+      addressCountry: "NG",
+    },
+    areaServed: [
+      { "@type": "City", name: "Sango Ota" },
+      { "@type": "AdministrativeArea", name: "Ogun State" },
+    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "07:00",
+      closes: "22:00",
+    },
+    paymentAccepted: "Bank transfer; Paystack payment link when provided",
     contactPoint: [
       { "@type": "ContactPoint", telephone: site.phoneHref, contactType: "sales", availableLanguage: "English" },
       { "@type": "ContactPoint", telephone: site.secondaryPhoneHref, contactType: "sales", availableLanguage: "English" },
@@ -33,6 +54,7 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     "@id": absoluteUrl("/#website"),
     name: site.name,
+    alternateName: site.displayName,
     url: absoluteUrl("/"),
     inLanguage: site.locale,
     publisher: { "@id": absoluteUrl("/#organization") },
@@ -44,6 +66,18 @@ export function websiteJsonLd() {
       },
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+export function faqPageJsonLd(items: readonly { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   };
 }
 
