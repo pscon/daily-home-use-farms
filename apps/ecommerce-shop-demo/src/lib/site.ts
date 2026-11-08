@@ -2,11 +2,11 @@ export const site = {
   name: "Daily Home Use Farm Limited", shortName: "Daily Home Use Farm",
   displayName: "Daily Home Use Depot", shortDisplayName: "Daily Depot",
   tagline: "Fresh eggs, gathered daily",
-  description: "Fresh Small, Medium and Big eggs sold in 30-egg crates from our egg depot in Sango Ota, Ogun State.",
+  description: "Fresh Small, Medium and Big eggs sold in 30-egg crates from our egg depot in Sango Ota, Ogun State, Nigeria.",
   locale: "en-NG", currency: "NGN", email: "hello@dailyhomeusefarm.com",
   phone: "0802 345 7318", phoneHref: "+2348023457318", whatsapp: "2348023457318",
   secondaryPhone: "07043 572217", secondaryPhoneHref: "+2347043572217",
-  address: "22 Tarmac Road, Sango Ota, Ogun State", hours: "7am–10pm daily",
+  address: "22 Tarmac Road, Sango Ota, Ogun State, Nigeria", hours: "7am–10pm daily",
   themeColor: { light: "#f3eee4", dark: "#18261c" },
 } as const;
 

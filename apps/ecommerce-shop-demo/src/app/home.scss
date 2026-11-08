@@ -38,3 +38,14 @@
 @media(max-width:64rem){.farm-laying{grid-template-columns:1fr;min-height:0}.farm-laying__photo{min-height:38rem}.farm-laying__story{padding:4rem 1.25rem}.farm-laying figure{grid-template-columns:minmax(8rem,12rem) 1fr}}
 @media(max-width:56rem){.farm-heading h2,.farm-editorial h2,.farm-steps h2,.farm-story h2{font-size:clamp(3.3rem,14vw,5rem)}.farm-poultry__grid{grid-template-columns:1fr;gap:3rem}.farm-poultry__media{min-height:28rem}.farm-poultry__card p{min-height:0}.farm-film{min-height:43rem}.farm-film__scrim{background:linear-gradient(0deg,rgba(15,25,16,.82),rgba(15,25,16,.12))}.farm-film__content{align-self:end;padding:4rem 1.25rem}.farm-film h2{font-size:clamp(3.7rem,16vw,5.5rem)}.farm-film__credit{right:1.25rem;bottom:.7rem;left:1.25rem}.farm-story h2{overflow-wrap:anywhere}.farm-laying__photo{min-height:30rem}.farm-laying h2{font-size:clamp(3.6rem,15vw,5rem)}}
 @media(max-width:32rem){.farm-laying figure{grid-template-columns:1fr}.farm-laying video{width:min(100%,18rem)}.farm-laying__photo{min-height:25rem}}
+
+.farm-faq{display:grid;grid-template-columns:minmax(18rem,.75fr) minmax(0,1.25fr);gap:clamp(3rem,8vw,9rem);background:#f0ece3}
+.farm-faq__intro{position:sticky;top:8rem;align-self:start}
+.farm-faq h2{max-width:11ch;margin:0;font:500 clamp(3.4rem,5.4vw,6rem)/.92 var(--app-font-display);letter-spacing:-.045em}
+.farm-faq__intro>p:last-child{max-width:28rem;margin-top:1.5rem;color:var(--color-text-muted);line-height:1.7}
+.farm-faq__list{border-top:1px solid var(--color-border)}
+.farm-faq details{border-bottom:1px solid var(--color-border)}
+.farm-faq summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem;padding:1.6rem 0;cursor:pointer;font:500 clamp(1.35rem,2vw,1.8rem)/1.2 var(--app-font-display);list-style:none}
+.farm-faq summary::-webkit-details-marker{display:none}.farm-faq summary span{font:400 1.4rem var(--app-font-sans);transition:transform .2s}.farm-faq details[open] summary span{transform:rotate(45deg)}
+.farm-faq details p{max-width:46rem;margin:0;padding:0 3rem 1.8rem 0;color:var(--color-text-muted);line-height:1.75}
+@media(max-width:56rem){.farm-faq{grid-template-columns:1fr;gap:3rem}.farm-faq__intro{position:static}.farm-faq h2{font-size:clamp(3.3rem,14vw,5rem)}}
