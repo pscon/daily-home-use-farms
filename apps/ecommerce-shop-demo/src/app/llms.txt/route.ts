@@ -31,9 +31,6 @@ ${site.displayName} is the customer-facing name of ${site.name}. The business su
 - [Medium eggs](${absoluteUrl("/collections/medium-eggs")})
 - [Big eggs](${absoluteUrl("/collections/big-eggs")})
 - [Our egg depot](${absoluteUrl("/about")})
-- [Chickens](${absoluteUrl("/poultry/chickens")})
-- [Turkeys](${absoluteUrl("/poultry/turkeys")})
-- [Day-old chicks](${absoluteUrl("/poultry/day-old-chicks")})
 
 ## Ordering
 

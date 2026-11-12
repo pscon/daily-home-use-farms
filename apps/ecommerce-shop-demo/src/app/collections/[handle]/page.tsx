@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { CatalogHeader } from "@/components/catalog-header/catalog-header";
 import { CatalogToolbar } from "@/components/catalog-toolbar/catalog-toolbar";
+import { EggSizes } from "@/components/egg-sizes/egg-sizes";
 import { JsonLd } from "@/components/json-ld/json-ld";
 import { CatalogSkeleton } from "@/components/page-skeleton/page-skeleton";
 import { ProductGrid } from "@/components/product-grid/product-grid";
@@ -96,6 +97,7 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
         refinements={refinements}
       />
       <div className="page page--flush">
+        {collection.handle === "all" && <div className="collection-egg-sizes"><EggSizes /></div>}
         {products.length > 0 ? (
           <ProductGrid
             products={products}
@@ -129,7 +131,8 @@ async function Collection({ params, searchParams }: PageProps<"/collections/[han
           <p>From the laying house</p>
           <h2 id="egg-origin-title">Fresh eggs begin with the birds.</h2>
           <p>We bring together daily egg supply and straightforward ordering from Sango Ota. Choose a complete crate of 30, then contact the egg depot for today’s price, pickup or delivery.</p>
-          <Link href="/poultry/chickens">See our chickens <span aria-hidden="true">↗</span></Link>
+          {/* Poultry hidden for now, focusing on eggs.
+          <Link href="/poultry/chickens">See our chickens <span aria-hidden="true">↗</span></Link> */}
         </div>
         <div className="egg-origin__media egg-origin__media--stock">
           <Image src="/farm/eggs-room.jpeg" alt="Crates of eggs at Daily Home Use Farm" fill sizes="(min-width: 64rem) 40vw, 100vw" />

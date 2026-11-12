@@ -14,17 +14,22 @@ import {
   NavigationMenuTrigger,
 } from "@nuvui/react";
 import { PhoneCallIcon } from "@nuvui/icons";
-import Image from "next/image";
+// import Image from "next/image"; // used by the hidden poultry feature
 import Link from "next/link";
 import { CartSheet } from "@/components/cart/cart-sheet";
+import { EggSizes } from "@/components/egg-sizes/egg-sizes";
 import { site } from "@/lib/site";
 import "./site-header.scss";
 
 const products = [
-  { href: "/collections/all", label: "Fresh eggs" },
-  { href: "/poultry/chickens", label: "Chickens" },
-  { href: "/poultry/turkeys", label: "Turkeys" },
-  { href: "/poultry/day-old-chicks", label: "Day-old chicks" },
+  { href: "/collections/all", label: "All fresh eggs" },
+  { href: "/collections/small-eggs", label: "Small eggs" },
+  { href: "/collections/medium-eggs", label: "Medium eggs" },
+  { href: "/collections/big-eggs", label: "Big eggs" },
+  // Poultry hidden for now, focusing on eggs. Uncomment to bring back.
+  // { href: "/poultry/chickens", label: "Chickens" },
+  // { href: "/poultry/turkeys", label: "Turkeys" },
+  // { href: "/poultry/day-old-chicks", label: "Day-old chicks" },
 ] as const;
 
 function ProductsPanel() {
@@ -49,6 +54,12 @@ function ProductsPanel() {
         </ul>
       </div>
       <NavigationMenuLink asChild>
+        <Link className="site-header__feature" href="/collections/all">
+          <EggSizes linked={false} compact />
+          <span className="site-header__feature-label">Three egg sizes</span>
+          <span className="site-header__feature-copy">Small, Medium and Big, each in a crate of 30.</span>
+        </Link>
+        {/* Poultry feature hidden for now, focusing on eggs.
         <Link className="site-header__feature" href="/poultry/chickens">
           <span className="site-header__feature-media">
             <Image className="site-header__feature-image" src="/farm/hen-laying-eggs.jpg" alt="Brown laying hen in a nesting box beside fresh eggs" width={440} height={550} sizes="220px" />
@@ -56,6 +67,7 @@ function ProductsPanel() {
           <span className="site-header__feature-label">Life around the coop</span>
           <span className="site-header__feature-copy">See our poultry and ask about today’s availability.</span>
         </Link>
+        */}
       </NavigationMenuLink>
     </div>
   );

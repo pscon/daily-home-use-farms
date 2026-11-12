@@ -6,9 +6,9 @@ Customers can browse Small, Medium and Big eggs, add whole 30-egg crates to a pe
 
 ## Business details
 
-- Address: 22 Tarmac Road, Sango Ota, Ogun State
+- Address: Sango Ota, Ogun State
 - Phone and WhatsApp: 08023457318
-- Opening hours: 7am–10pm daily
+- Opening hours: Open 24/7
 - Working email: hello@dailyhomeusefarm.com
 - Currency: Nigerian naira (NGN)
 
