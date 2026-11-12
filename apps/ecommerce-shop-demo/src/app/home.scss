@@ -49,3 +49,4 @@
 .farm-faq summary::-webkit-details-marker{display:none}.farm-faq summary span{font:400 1.4rem var(--app-font-sans);transition:transform .2s}.farm-faq details[open] summary span{transform:rotate(45deg)}
 .farm-faq details p{max-width:46rem;margin:0;padding:0 3rem 1.8rem 0;color:var(--color-text-muted);line-height:1.75}
 @media(max-width:56rem){.farm-faq{grid-template-columns:1fr;gap:3rem}.farm-faq__intro{position:static}.farm-faq h2{font-size:clamp(3.3rem,14vw,5rem)}}
+.farm-egg-sizes{max-width:44rem;margin:0 0 3rem}

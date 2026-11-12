@@ -25,7 +25,6 @@ export function organizationJsonLd() {
     telephone: site.phoneHref,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "22 Tarmac Road",
       addressLocality: "Sango Ota",
       addressRegion: "Ogun State",
       addressCountry: "NG",
@@ -37,8 +36,8 @@ export function organizationJsonLd() {
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "07:00",
-      closes: "22:00",
+      opens: "00:00",
+      closes: "23:59",
     },
     paymentAccepted: "Bank transfer; Paystack payment link when provided",
     contactPoint: [

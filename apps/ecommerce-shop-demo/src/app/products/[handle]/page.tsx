@@ -117,7 +117,7 @@ async function Product({ params, searchParams }: PageProps<"/products/[handle]">
             <ul className="product__promises">
               <li className="product__promise">
                 <TruckIcon size={18} />
-                Pickup daily, 7am–10pm
+                Open 24/7
               </li>
               <li className="product__promise">
                 <TruckIcon size={18} />

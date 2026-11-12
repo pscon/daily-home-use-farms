@@ -6,7 +6,7 @@ export const site = {
   locale: "en-NG", currency: "NGN", email: "hello@dailyhomeusefarm.com",
   phone: "0802 345 7318", phoneHref: "+2348023457318", whatsapp: "2348023457318",
   secondaryPhone: "07043 572217", secondaryPhoneHref: "+2347043572217",
-  address: "22 Tarmac Road, Sango Ota, Ogun State, Nigeria", hours: "7am–10pm daily",
+  address: "Sango Ota, Ogun State, Nigeria", hours: "Open 24/7",
   themeColor: { light: "#f3eee4", dark: "#18261c" },
 } as const;
 
